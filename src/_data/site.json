@@ -1,24 +1,31 @@
 {
-  "name": "Sample Business Co.",
-  "tagline": "Quality service, right here in Apopka.",
-  "description": "Sample Business Co. is a locally owned small business serving Apopka and Central Florida.",
-  "phone": "(407) 555-0123",
-  "email": "hello@example.com",
+  "name": "Taste of Ky Catering",
+  "tagline": "Elevated Catering Experiences in Central Florida",
+  "description": "Taste of Ky is a Central Florida catering company by Chef Ky-Mani Folkes, offering custom menus, private events and curated dining experiences.",
+  "phone": "",
+  "email": "",
+  "serviceArea": "Serving Central Florida",
   "address": {
-    "street": "123 Main St",
-    "city": "Apopka",
+    "street": "",
+    "city": "",
     "state": "FL",
-    "zip": "32703"
+    "zip": ""
   },
-  "heroImage": "",
-  "logo": "",
-  "about": "Tell your story here — who you are, how you started, and what makes your business different. Keep it to 2–4 sentences.",
-  "ctaText": "Call Now",
+  "heroImage": "/images/uploads/hero-buffet.jpg",
+  "logo": "/images/uploads/logo.jpg",
+  "chefImage": "/images/uploads/chef-ky-mani.jpg",
+  "about": "Ky-Mani Folkes was born in Brooklyn, New York, and raised in Orlando, Florida. His passion for cooking was sparked early on by the Pixar film Ratatouille, which showed him that great food can come from heart, creativity, and courage no matter where you start.\n\nKy-Mani's culinary journey truly began at a turning point in his life, after he was unexpectedly let go from a previous job. Instead of letting the setback define him, he chose to pursue the path that had always inspired him. What started as a challenge became the push he needed to chase his dream of becoming a chef.\n\nToday, Ky-Mani is driven by growth, resilience, and a deep love for food, committed to honing his craft and creating meaningful experiences through cooking.",
+  "testimonial": {
+    "quote": "Professional, on time, and absolutely delicious. The bourbon chicken alone is worth the booking.",
+    "author": "Quillon"
+  },
+  "ctaText": "Book Your Event",
   "bookingUrl": "",
+  "menuPdf": "/menu.pdf",
   "social": {
-    "instagram": "",
-    "facebook": "",
-    "tiktok": "",
+    "instagram": "https://www.instagram.com/tasteofkyllc/",
+    "facebook": "https://www.facebook.com/profile.php?id=61588197088308",
+    "tiktok": "https://www.tiktok.com/@chefkymani",
     "google": ""
   }
 }

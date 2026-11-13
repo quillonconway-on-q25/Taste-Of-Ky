@@ -1,4 +1,16 @@
 {
-  "title": "Our Work",
-  "images": []
+  "title": "From Our Kitchen",
+  "images": [
+    { "image": "/images/uploads/buffet-spread.jpg", "alt": "Buffet spread with pastas, rice and sides" },
+    { "image": "/images/uploads/chafing-dishes.jpg", "alt": "Chafing dishes of orange chicken and Korean fried chicken" },
+    { "image": "/images/uploads/jerk-wings.jpg", "alt": "Tray of glazed chicken wings" },
+    { "image": "/images/uploads/korean-fried-chicken.jpg", "alt": "Korean fried chicken in a catering pan" },
+    { "image": "/images/uploads/cheesecake-sliders.jpg", "alt": "Cheesecake sliders topped with strawberries" },
+    { "image": "/images/uploads/lamb-chops.jpg", "alt": "Lamb chops with mac and cheese and collard greens" },
+    { "image": "/images/uploads/ackee-saltfish.jpg", "alt": "Ackee and saltfish with fried plantain" },
+    { "image": "/images/uploads/teriyaki-chicken-noodles.jpg", "alt": "Teriyaki chicken over lo mein noodles" },
+    { "image": "/images/uploads/cajun-salmon.jpg", "alt": "Cajun salmon with roasted potatoes" },
+    { "image": "/images/uploads/pesto-pasta.jpg", "alt": "Pesto pasta" },
+    { "image": "/images/uploads/pan-trays.jpg", "alt": "Catering pans of curry, collard greens and baked pasta" }
+  ]
 }

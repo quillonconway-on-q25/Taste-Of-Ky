@@ -34,9 +34,11 @@
       </a>
       <nav class="nav">
         <a href="/#services">Services</a>
-        <a href="/#hours">Hours</a>
+        <a href="/#about">About</a>
+        {% if gallery.images.length %}<a href="/#gallery">Gallery</a>{% endif %}
+        {% if hours.days.length %}<a href="/#hours">Hours</a>{% endif %}
         <a href="/#contact">Contact</a>
-        <a href="{{ site.phone | telLink }}" class="btn btn-sm">{{ site.ctaText }}</a>
+        <a href="{% if site.phone %}{{ site.phone | telLink }}{% else %}/#contact{% endif %}" class="btn btn-sm">{{ site.ctaText }}</a>
       </nav>
     </div>
   </header>
@@ -49,10 +51,11 @@
     <div class="wrap footer-inner">
       <div>
         <strong>{{ site.name }}</strong><br>
-        <a href="{{ site.address | mapsLink }}" target="_blank" rel="noopener">
+        {% if site.address.street %}<a href="{{ site.address | mapsLink }}" target="_blank" rel="noopener">
           {{ site.address.street }}, {{ site.address.city }}, {{ site.address.state }} {{ site.address.zip }}
-        </a><br>
-        <a href="{{ site.phone | telLink }}">{{ site.phone }}</a>
+        </a><br>{% elif site.serviceArea %}{{ site.serviceArea }}<br>{% endif %}
+        {% if site.phone %}<a href="{{ site.phone | telLink }}">{{ site.phone }}</a><br>{% endif %}
+        {% if site.email %}<a href="mailto:{{ site.email }}">{{ site.email }}</a>{% endif %}
       </div>
       <div class="social">
         {% if site.social.instagram %}<a href="{{ site.social.instagram }}" target="_blank" rel="noopener">Instagram</a>{% endif %}

@@ -6,7 +6,8 @@ layout: base.njk
     <h1>{{ site.name }}</h1>
     <p class="tagline">{{ site.tagline }}</p>
     <div class="hero-ctas">
-      <a href="{{ site.phone | telLink }}" class="btn">{{ site.ctaText }}</a>
+      <a href="{% if site.phone %}{{ site.phone | telLink }}{% else %}#contact{% endif %}" class="btn">{{ site.ctaText }}</a>
+      {% if site.menuPdf %}<a href="{{ site.menuPdf }}" class="btn btn-outline" target="_blank" rel="noopener">View Menu</a>{% endif %}
       {% if site.bookingUrl %}<a href="{{ site.bookingUrl }}" class="btn btn-outline" target="_blank" rel="noopener">Book Online</a>{% endif %}
     </div>
   </div>
@@ -14,7 +15,7 @@ layout: base.njk
 
 <section id="services" class="section">
   <div class="wrap">
-    <h2>Services</h2>
+    <h2>Catering Menu</h2>
     <div class="grid">
       {% for item in collections.services %}
       <article class="card">
@@ -33,11 +34,23 @@ layout: base.njk
 </section>
 
 <section id="about" class="section alt">
-  <div class="wrap narrow">
-    <h2>About Us</h2>
-    <p>{{ site.about }}</p>
+  <div class="wrap about{% if site.chefImage %} about-grid{% endif %}">
+    {% if site.chefImage %}<img src="{{ site.chefImage }}" alt="Chef Ky-Mani Folkes" class="about-photo" loading="lazy">{% endif %}
+    <div>
+      <p class="eyebrow">Meet The Chef</p>
+      <h2>Who Is Ky-Mani</h2>
+      {% for para in site.about | split %}<p>{{ para }}</p>{% endfor %}
+    </div>
   </div>
 </section>
+
+{% if site.testimonial.quote %}
+<section class="section">
+  <div class="wrap narrow center">
+    <blockquote class="quote">“{{ site.testimonial.quote }}”<cite>— {{ site.testimonial.author }}</cite></blockquote>
+  </div>
+</section>
+{% endif %}
 
 {% if gallery.images.length %}
 <section id="gallery" class="section">
@@ -52,9 +65,10 @@ layout: base.njk
 </section>
 {% endif %}
 
+{% if hours.days.length or site.address.street or site.phone or site.email %}
 <section id="hours" class="section">
   <div class="wrap two-col">
-    <div>
+    {% if hours.days.length %}<div>
       <h2>Hours</h2>
       <table class="hours">
         {% for d in hours.days %}
@@ -62,31 +76,36 @@ layout: base.njk
         {% endfor %}
       </table>
       {% if hours.note %}<p class="muted">{{ hours.note }}</p>{% endif %}
-    </div>
+    </div>{% endif %}
     <div>
       <h2>Find Us</h2>
-      <p>
+      {% if site.address.street %}<p>
         <a href="{{ site.address | mapsLink }}" target="_blank" rel="noopener">
           {{ site.address.street }}<br>{{ site.address.city }}, {{ site.address.state }} {{ site.address.zip }}
         </a>
-      </p>
-      <p><a href="{{ site.phone | telLink }}">{{ site.phone }}</a></p>
+      </p>{% elif site.serviceArea %}<p>{{ site.serviceArea }}</p>{% endif %}
+      {% if site.phone %}<p><a href="{{ site.phone | telLink }}">{{ site.phone }}</a></p>{% endif %}
       {% if site.email %}<p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>{% endif %}
     </div>
   </div>
 </section>
+{% endif %}
 
 <section id="contact" class="section alt">
   <div class="wrap narrow">
-    <h2>Get in Touch</h2>
+    <h2>Get In Touch</h2>
     <!-- Netlify Forms: submissions appear in Netlify → Forms (free on credit plans). Set email notifications there. -->
     <form name="contact" method="POST" action="/thank-you/" data-netlify="true" netlify-honeypot="company" class="form">
       <input type="hidden" name="form-name" value="contact">
       <p class="hidden"><label>Leave blank <input name="company"></label></p>
-      <label>Name <input type="text" name="name" required></label>
-      <label>Phone <input type="tel" name="phone"></label>
+      <label>First name <input type="text" name="first-name" required></label>
+      <label>Last name <input type="text" name="last-name" required></label>
       <label>Email <input type="email" name="email" required></label>
-      <label>Message <textarea name="message" rows="4" required></textarea></label>
+      <label>Phone <input type="tel" name="phone"></label>
+      <label>Event type <input type="text" name="event-type" placeholder="Watch party, launch party, birthday…"></label>
+      <label>Number of guests <input type="number" name="guests" min="1"></label>
+      <label>Location of event <input type="text" name="event-location"></label>
+      <label>Anything else we should know? <textarea name="message" rows="4"></textarea></label>
       <button type="submit" class="btn">Send Message</button>
     </form>
   </div>

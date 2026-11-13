@@ -9,18 +9,18 @@
   "name": {{ site.name | json | safe }},
   "description": {{ site.description | json | safe }},
   "url": {{ settings.url | json | safe }},
-  "telephone": {{ site.phone | json | safe }},
+  {% if site.phone %}"telephone": {{ site.phone | json | safe }},{% endif %}
   {% if site.email %}"email": {{ site.email | json | safe }},{% endif %}
   {% if site.heroImage %}"image": {{ (settings.url + site.heroImage) | json | safe }},{% endif %}
   {% if settings.priceRange %}"priceRange": {{ settings.priceRange | json | safe }},{% endif %}
-  "address": {
+  {% if site.address.street %}"address": {
     "@type": "PostalAddress",
     "streetAddress": {{ site.address.street | json | safe }},
     "addressLocality": {{ site.address.city | json | safe }},
     "addressRegion": {{ site.address.state | json | safe }},
     "postalCode": {{ site.address.zip | json | safe }},
     "addressCountry": "US"
-  },
+  },{% else %}"areaServed": {{ "Central Florida" | json | safe }},{% endif %}
   "openingHours": [
     {%- set comma = joiner(",") -%}
     {%- for d in hours.days -%}

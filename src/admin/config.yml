@@ -3,7 +3,7 @@
 
 backend:
   name: github
-  repo: on-q25/CLIENT-REPO-NAME   # <-- change per client (org/repo)
+  repo: quillonconway-on-q25/Taste-Of-Ky   # <-- change per client (org/repo)
   branch: main
   commit_messages:
     create: "Create {{collection}} “{{slug}}” (via CMS)"
@@ -19,8 +19,8 @@ publish_mode: editorial_workflow
 # Run `npm run cms` + `npm run dev` to test the CMS locally at localhost:8080/admin/
 local_backend: true
 
-site_url: https://example.com     # <-- change per client
-display_url: https://example.com  # <-- change per client
+site_url: https://chefky-mani.com     # <-- change per client
+display_url: https://chefky-mani.com  # <-- change per client
 logo_url: /images/uploads/logo.png
 
 media_folder: "src/images/uploads"
@@ -39,16 +39,27 @@ collections:
           - { label: "Tagline", name: "tagline", widget: "string" }
           - { label: "Short Description (shows in Google)", name: "description", widget: "text", hint: "1–2 sentences, under 160 characters." }
           - { label: "About Us", name: "about", widget: "text" }
-          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string", required: false }
           - { label: "Email", name: "email", widget: "string", required: false }
+          - { label: "Service Area", name: "serviceArea", widget: "string", required: false, hint: "Shown when there is no street address, e.g. Serving Central Florida." }
           - label: "Address"
             name: "address"
             widget: "object"
+            required: false
             fields:
-              - { label: "Street", name: "street", widget: "string" }
-              - { label: "City", name: "city", widget: "string" }
-              - { label: "State", name: "state", widget: "string" }
-              - { label: "ZIP", name: "zip", widget: "string" }
+              - { label: "Street", name: "street", widget: "string", required: false }
+              - { label: "City", name: "city", widget: "string", required: false }
+              - { label: "State", name: "state", widget: "string", required: false }
+              - { label: "ZIP", name: "zip", widget: "string", required: false }
+          - { label: "Chef Photo", name: "chefImage", widget: "image", required: false }
+          - label: "Testimonial"
+            name: "testimonial"
+            widget: "object"
+            required: false
+            fields:
+              - { label: "Quote", name: "quote", widget: "text", required: false }
+              - { label: "Author", name: "author", widget: "string", required: false }
+          - { label: "Menu PDF", name: "menuPdf", widget: "file", required: false }
           - { label: "Main Button Text", name: "ctaText", widget: "string" }
           - { label: "Online Booking Link", name: "bookingUrl", widget: "string", required: false, hint: "Calendly, Square, Booksy, etc. Leave blank to hide." }
           - { label: "Hero Image", name: "heroImage", widget: "image", required: false }

@@ -3,6 +3,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/admin");
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/images");
+  eleventyConfig.addPassthroughCopy("src/menu.pdf");
 
   // Services / menu items, sorted by "order" field
   eleventyConfig.addCollection("services", (api) =>
@@ -17,6 +18,7 @@ export default function (eleventyConfig) {
     "https://www.google.com/maps/search/?api=1&query=" +
     encodeURIComponent([a.street, a.city, a.state, a.zip].filter(Boolean).join(", "))
   );
+  eleventyConfig.addFilter("split", (s = "") => s.split(/\n\s*\n/).filter(Boolean));
   eleventyConfig.addFilter("json", (v) => JSON.stringify(v));
 
   // "9:00 AM – 6:00 PM" -> "09:00-18:00" (schema.org openingHours format). Returns "" if unparseable.
