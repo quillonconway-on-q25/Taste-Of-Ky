@@ -112,7 +112,7 @@ layout: base.njk
     <h2>{{ gallery.title }}</h2>
     <div class="gallery">
       {% for img in gallery.images %}
-      <img src="{{ img.image }}" alt="{{ img.alt or site.name }}" loading="lazy">
+      <img src="{{ img.image }}" alt="{{ img.alt or site.name }}" loading="lazy"{% if img.wide %} class="wide"{% endif %}>
       {% endfor %}
     </div>
   </div>

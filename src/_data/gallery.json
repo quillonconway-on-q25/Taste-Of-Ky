@@ -19,11 +19,13 @@
     },
     {
       "image": "/images/uploads/lamb-chops.jpg",
-      "alt": "Lamb chops with mac and cheese and collard greens"
+      "alt": "Lamb chops with mac and cheese and collard greens",
+      "wide": true
     },
     {
       "image": "/images/uploads/ackee-saltfish.jpg",
-      "alt": "Ackee and saltfish with fried plantain"
+      "alt": "Ackee and saltfish with fried plantain",
+      "wide": true
     },
     {
       "image": "/images/uploads/teriyaki-chicken-noodles.jpg",

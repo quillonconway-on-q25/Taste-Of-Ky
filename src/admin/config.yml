@@ -99,6 +99,7 @@ collections:
             fields:
               - { label: "Photo", name: "image", widget: "image" }
               - { label: "Description (for accessibility/SEO)", name: "alt", widget: "string", required: false }
+              - { label: "Show full width (no square crop)", name: "wide", widget: "boolean", default: false, required: false, hint: "Use for wide landscape photos." }
 
   - name: "services"
     label: "Services / Menu"
