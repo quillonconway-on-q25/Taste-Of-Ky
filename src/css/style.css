@@ -95,7 +95,7 @@ h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
 .quote { margin: 0; font-size: clamp(1.2rem, 3vw, 1.6rem); line-height: 1.5; }
 .quote cite { display: block; margin-top: .8em; font-size: .95rem; font-style: normal; color: var(--muted); }
 .brand img { height: 48px; width: auto; }
-@media (max-width: 720px) { .about-grid { grid-template-columns: 1fr; } .about-photo { max-width: 420px; margin: 0 auto; } }
+@media (max-width: 720px) { .about-grid { grid-template-columns: 1fr; } .about-photo { width: calc(100% + 32px); max-width: none; margin: 0 -16px; border-radius: 0; } }
 
 /* Testimonial section (scroll-snap slider, auto-advances via inline script) */
 .testimonial { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
