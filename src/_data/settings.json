@@ -5,7 +5,7 @@
   "priceRange": "$$",
   "theme": {
     "primary": "#0A0A0A",
-    "accent": "#9C7312",
-    "background": "#FFFFFF"
+    "accent": "#FFFFFF",
+    "background": "#0A0A0A"
   }
 }
