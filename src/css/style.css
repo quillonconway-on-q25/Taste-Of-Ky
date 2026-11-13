@@ -34,7 +34,7 @@ h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
 .btn-sm { padding: .45em 1em; font-size: .9rem; }
 
 /* Header */
-.site-header { background: var(--primary); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 10; }
+.site-header { background: #000; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 10; }
 .header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 64px; gap: 16px; }
 .brand { color: #fff; font-weight: 700; font-size: 1.2rem; text-decoration: none; }
 .nav { display: flex; align-items: center; gap: 20px; }
