@@ -55,8 +55,9 @@ h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
 .card img { aspect-ratio: 4 / 3; object-fit: cover; width: 100%; }
 .card-body { padding: 20px; }
 .card-body p { margin: 0; color: var(--muted); }
-.card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
-.price { font-weight: 700; color: var(--accent); white-space: nowrap; }
+.card-head { display: flex; flex-direction: column; gap: 4px; margin-bottom: 10px; }
+.card-head h3 { margin: 0; }
+.price { font-weight: 700; color: var(--accent); font-size: .95rem; letter-spacing: .02em; }
 
 .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
 .gallery img { aspect-ratio: 1; object-fit: cover; border-radius: var(--radius); width: 100%; }
