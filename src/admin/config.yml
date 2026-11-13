@@ -52,13 +52,15 @@ collections:
               - { label: "State", name: "state", widget: "string", required: false }
               - { label: "ZIP", name: "zip", widget: "string", required: false }
           - { label: "Chef Photo", name: "chefImage", widget: "image", required: false }
-          - label: "Testimonial"
-            name: "testimonial"
-            widget: "object"
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "list"
             required: false
+            hint: "Rotates automatically on the home page."
+            summary: "{{fields.author}}"
             fields:
-              - { label: "Quote", name: "quote", widget: "text", required: false }
-              - { label: "Author", name: "author", widget: "string", required: false }
+              - { label: "Quote", name: "quote", widget: "text" }
+              - { label: "Author", name: "author", widget: "string" }
           - { label: "Menu PDF", name: "menuPdf", widget: "file", required: false }
           - { label: "Main Button Text", name: "ctaText", widget: "string" }
           - { label: "Online Booking Link", name: "bookingUrl", widget: "string", required: false, hint: "Calendly, Square, Booksy, etc. Leave blank to hide." }

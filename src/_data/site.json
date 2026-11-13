@@ -15,10 +15,16 @@
   "logo": "/images/uploads/logo.jpg",
   "chefImage": "/images/uploads/chef-ky-mani.jpg",
   "about": "Ky-Mani Folkes was born in Brooklyn, New York, and raised in Orlando, Florida. His passion for cooking was sparked early on by the Pixar film Ratatouille, which showed him that great food can come from heart, creativity, and courage no matter where you start.\n\nKy-Mani's culinary journey truly began at a turning point in his life, after he was unexpectedly let go from a previous job. Instead of letting the setback define him, he chose to pursue the path that had always inspired him. What started as a challenge became the push he needed to chase his dream of becoming a chef.\n\nToday, Ky-Mani is driven by growth, resilience, and a deep love for food, committed to honing his craft and creating meaningful experiences through cooking.",
-  "testimonial": {
-    "quote": "Professional, on time, and absolutely delicious. The bourbon chicken alone is worth the booking.",
-    "author": "Quillon"
-  },
+  "testimonials": [
+    {
+      "quote": "Professional, on time, and absolutely delicious. The bourbon chicken alone is worth the booking.",
+      "author": "Quillon"
+    },
+    {
+      "quote": "The food was fire and my wife liked the setup he did.",
+      "author": "Da'Quan"
+    }
+  ],
   "ctaText": "Book Your Event",
   "bookingUrl": "",
   "menuPdf": "/menu.pdf",

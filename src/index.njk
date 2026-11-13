@@ -44,14 +44,66 @@ layout: base.njk
   </div>
 </section>
 
-{% if site.testimonial.quote %}
+{% if site.testimonials.length %}
 <section id="testimonial" class="section testimonial">
   <div class="wrap narrow center">
-    <p class="eyebrow">Testimonial</p>
+    <p class="eyebrow">Testimonials</p>
     <h2>What Our Clients Say</h2>
-    <blockquote class="quote">“{{ site.testimonial.quote }}”<cite>— {{ site.testimonial.author }}</cite></blockquote>
+    <div class="slider" data-slider role="region" aria-roledescription="carousel" aria-label="Client testimonials">
+      <div class="slides" tabindex="0">
+        {% for t in site.testimonials %}
+        <figure class="slide" aria-roledescription="slide" aria-label="{{ loop.index }} of {{ loop.length }}">
+          <blockquote class="quote">“{{ t.quote }}”</blockquote>
+          <figcaption class="quote-by">— {{ t.author }}</figcaption>
+        </figure>
+        {% endfor %}
+      </div>
+      {% if site.testimonials.length > 1 %}
+      <div class="dots">
+        {% for t in site.testimonials %}<button type="button" class="dot" aria-label="Show testimonial {{ loop.index }}"></button>{% endfor %}
+      </div>
+      {% endif %}
+    </div>
   </div>
 </section>
+<script>
+(function () {
+  var root = document.querySelector('[data-slider]');
+  if (!root) return;
+  var track = root.querySelector('.slides');
+  var slides = root.querySelectorAll('.slide');
+  var dots = root.querySelectorAll('.dot');
+  if (slides.length < 2) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var INTERVAL = 6000, timer = null, current = 0;
+
+  function show(i, smooth) {
+    current = (i + slides.length) % slides.length;
+    track.scrollTo({ left: current * track.clientWidth, behavior: smooth && !reduce ? 'smooth' : 'auto' });
+    mark();
+  }
+  function mark() {
+    dots.forEach(function (d, i) {
+      d.classList.toggle('active', i === current);
+      d.setAttribute('aria-current', i === current ? 'true' : 'false');
+    });
+  }
+  function start() { if (!reduce && !timer) timer = setInterval(function () { show(current + 1, true); }, INTERVAL); }
+  function stop() { clearInterval(timer); timer = null; }
+
+  track.addEventListener('scroll', function () {
+    var i = Math.round(track.scrollLeft / track.clientWidth);
+    if (i !== current) { current = i; mark(); }
+  }, { passive: true });
+  dots.forEach(function (d, i) { d.addEventListener('click', function () { show(i, true); }); });
+  ['mouseenter', 'focusin', 'touchstart'].forEach(function (e) { root.addEventListener(e, stop, { passive: true }); });
+  ['mouseleave', 'focusout'].forEach(function (e) { root.addEventListener(e, start); });
+  root.addEventListener('touchend', function () { setTimeout(start, 8000); }, { passive: true });
+  document.addEventListener('visibilitychange', function () { document.hidden ? stop() : start(); });
+  window.addEventListener('resize', function () { show(current, false); });
+  mark(); start();
+})();
+</script>
 {% endif %}
 
 {% if gallery.images.length %}

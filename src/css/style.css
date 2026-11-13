@@ -96,6 +96,15 @@ h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
 .brand img { height: 48px; width: auto; }
 @media (max-width: 720px) { .about-grid { grid-template-columns: 1fr; } .about-photo { max-height: 420px; aspect-ratio: 4 / 5; } }
 
-/* Testimonial section */
+/* Testimonial section (scroll-snap slider, auto-advances via inline script) */
 .testimonial { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-.testimonial .quote { margin-top: 1em; font-size: clamp(1.25rem, 3vw, 1.75rem); }
+.slides { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin-top: 1.2em; }
+.slides::-webkit-scrollbar { display: none; }
+.slides:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.slide { flex: 0 0 100%; scroll-snap-align: center; margin: 0; padding: 0 8px; }
+.testimonial .quote { margin: 0; font-size: clamp(1.25rem, 3vw, 1.75rem); line-height: 1.5; }
+.quote-by { margin-top: .9em; font-size: .95rem; color: var(--muted); }
+.dots { display: flex; justify-content: center; gap: 10px; margin-top: 1.6em; }
+.dot { width: 10px; height: 10px; padding: 0; border-radius: 50%; border: 1px solid var(--accent); background: transparent; cursor: pointer; }
+.dot.active { background: var(--accent); }
+.dot:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
