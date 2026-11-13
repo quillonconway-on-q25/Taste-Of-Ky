@@ -88,7 +88,8 @@ h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
 
 /* Taste of Ky additions */
 .about-grid { display: grid; grid-template-columns: minmax(220px, 360px) 1fr; gap: 40px; align-items: center; }
-.about-photo { width: 100%; height: auto; border-radius: var(--radius); }
+/* Crop: trims empty ceiling above the hat (290px) and counter below the apron (221px) of the 933x1400 source */
+.about-photo { width: 100%; height: auto; aspect-ratio: 933 / 889; object-fit: cover; object-position: 50% 56.7%; border-radius: var(--radius); }
 .about p { margin: 0 0 1em; }
 .eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: .8rem; color: var(--muted); font-weight: 700; margin: 0 0 .4em !important; }
 .quote { margin: 0; font-size: clamp(1.2rem, 3vw, 1.6rem); line-height: 1.5; }
