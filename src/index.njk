@@ -45,8 +45,10 @@ layout: base.njk
 </section>
 
 {% if site.testimonial.quote %}
-<section class="section">
+<section id="testimonial" class="section testimonial">
   <div class="wrap narrow center">
+    <p class="eyebrow">Testimonial</p>
+    <h2>What Our Clients Say</h2>
     <blockquote class="quote">“{{ site.testimonial.quote }}”<cite>— {{ site.testimonial.author }}</cite></blockquote>
   </div>
 </section>

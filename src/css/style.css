@@ -89,3 +89,9 @@ h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
 .quote cite { display: block; margin-top: .8em; font-size: .95rem; font-style: normal; color: var(--muted); }
 .brand img { height: 48px; width: auto; }
 @media (max-width: 720px) { .about-grid { grid-template-columns: 1fr; } .about-photo { max-height: 420px; aspect-ratio: 4 / 5; } }
+
+/* Testimonial section */
+.testimonial { background: var(--primary); color: #fff; }
+.testimonial .eyebrow { color: #d8b45a; }
+.testimonial .quote { margin-top: 1em; font-size: clamp(1.25rem, 3vw, 1.75rem); }
+.testimonial .quote cite { color: #d8b45a; }
