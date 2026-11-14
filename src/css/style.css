@@ -35,7 +35,7 @@ h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
 
 /* Header */
 .site-header { background: #000; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 10; }
-.header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 64px; gap: 16px; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 76px; gap: 16px; }
 .brand { color: #fff; font-weight: 700; font-size: 1.2rem; text-decoration: none; }
 .nav { display: flex; align-items: center; gap: 20px; }
 .nav a:not(.btn) { color: #fff; text-decoration: none; font-size: .95rem; }
@@ -96,7 +96,7 @@ h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
 .eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: .8rem; color: var(--muted); font-weight: 700; margin: 0 0 .4em !important; }
 .quote { margin: 0; font-size: clamp(1.2rem, 3vw, 1.6rem); line-height: 1.5; }
 .quote cite { display: block; margin-top: .8em; font-size: .95rem; font-style: normal; color: var(--muted); }
-.brand img { height: 48px; width: auto; }
+.brand img { height: 64px; width: auto; }
 @media (max-width: 720px) { .about-grid { grid-template-columns: 1fr; } .about-photo { width: calc(100% + 32px); max-width: none; margin: 0 -16px; border-radius: 0; } }
 
 /* Testimonial section (scroll-snap slider, auto-advances via inline script) */
